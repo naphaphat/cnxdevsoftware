@@ -1,0 +1,18 @@
+﻿@model List<cnxdevsoftware.Models.ItemMaster>
+
+@{
+    ViewData["Title"] = "Item Data";
+}
+
+@foreach (var item in Model)
+{
+    <div class="card">
+        <img src="data:image/jpeg;base64,@Convert.ToBase64String(item.ItemImage)" width="200px" height="200px"/>
+        <div class="container">
+            <h4><b>@item.ItemName</b></h4>
+            <p>ราคา : @item.ItemPrice</p>
+            <p>รายละเอียด : @item.ItemDescription</p>
+        </div>
+    </div>
+
+}
